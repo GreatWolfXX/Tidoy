@@ -1,4 +1,4 @@
-package com.greatwolf.tidoy.ui.theme
+    package com.greatwolf.tidoy.ui.theme
 
 import android.app.Activity
 import android.os.Build
