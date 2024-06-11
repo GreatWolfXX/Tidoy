@@ -1,4 +1,4 @@
-package com.greatwolf.tidoy.presentation.screen
+package com.greatwolf.tidoy.presentation.screen.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -19,12 +18,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.greatwolf.tidoy.R
 import com.greatwolf.tidoy.navigation.Screen
 import com.greatwolf.tidoy.presentation.component.LoadingAnimation
-import com.greatwolf.tidoy.ui.theme.PrimarySplash
+import com.greatwolf.tidoy.ui.theme.BackgroundMain
 import com.greatwolf.tidoy.ui.theme.SecondarySplash
 import kotlinx.coroutines.delay
 
@@ -41,7 +39,7 @@ fun SplashScreen(navController: NavHostController) {
 fun Splash() {
     val gradient = Brush.verticalGradient(
         colorStops = arrayOf(
-            0.65f to PrimarySplash,
+            0.65f to BackgroundMain,
             1f to SecondarySplash
         )
     )
@@ -72,8 +70,8 @@ fun Splash() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun Preview() {
+fun SplashPreview() {
     Splash()
 }

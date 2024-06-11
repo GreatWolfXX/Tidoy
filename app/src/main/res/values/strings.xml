@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Tidoy</string>
+    <string name="title_first_onboarding">Gateway to Your Adventure</string>
+    <string name="description_first_onboarding">Enjoy various housing options, from budget to luxury, in Tidoy.</string>
+    <string name="title_second_onboarding">Discover the Wonders of the World: Let\'s Explore!</string>
+    <string name="description_second_onboarding">Book a stay wherever you are, whenever you want.</string>
+    <string name="title_third_onboarding">The Right Solution for Your Holiday Accommodation</string>
+    <string name="description_third_onboarding">A stress-free Holiday? Trust your Holiday accommodation to Tidoy!</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_skip">Skip</string>
 </resources>

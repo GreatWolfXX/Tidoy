@@ -73,4 +73,6 @@ dependencies {
     implementation(libs.navigation.compose)
     implementation(libs.serialization.json)
     implementation(libs.datastore)
+
+    implementation(libs.google.fonts)
 }
