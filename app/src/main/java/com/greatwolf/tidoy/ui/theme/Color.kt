@@ -11,7 +11,10 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val BackgroundMain = Color(0xFFFF9900)
-var SecondarySplash = Color(0xFFFFD79B)
+val SecondarySplash = Color(0xFFFFD79B)
+val StrokeFocused = Color(0xFFCCE1FF)
+val TextDanger = Color(0xFFED1F4F)
+val BackgroundDanger = Color(0xFFFBD2DC)
 
 val PrimaryMain = Color(0xFFFF9A01)
 val PrimarySurface = Color(0xFFFFEBCC)

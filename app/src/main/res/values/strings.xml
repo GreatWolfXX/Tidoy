@@ -9,4 +9,7 @@
     <string name="btn_next">Next</string>
     <string name="btn_get_started">Get Started</string>
     <string name="btn_skip">Skip</string>
+    <string name="title_username">Username</string>
+    <string name="placeholder_example_username">ex : Johndoe123</string>
+    <string name="err_username_already_used">Username already in used</string>
 </resources>
