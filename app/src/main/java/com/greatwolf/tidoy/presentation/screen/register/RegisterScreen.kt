@@ -1,6 +1,7 @@
 package com.greatwolf.tidoy.presentation.screen.register
 
 import android.widget.Space
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -44,13 +45,15 @@ fun RegisterScreen() {
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
     )
+    val containerColor = if(isSystemInDarkTheme()) Neutral100 else Color.White
     ModalBottomSheet(
         modifier = Modifier
-            .padding(top = 64.dp)
+            .padding(top = 48.dp)
             .fillMaxSize(),
         sheetState = sheetState,
         onDismissRequest = { },
-        containerColor = Color.White,
+        containerColor = containerColor,
+        contentColor = if(isSystemInDarkTheme()) Color.White else Neutral100
     ) {
         Column(
             modifier = Modifier.padding(horizontal = 16.dp)
@@ -63,7 +66,6 @@ fun RegisterScreen() {
                 Text(
                     text = stringResource(id = R.string.title_welcome),
                     fontSize = 18.sp,
-                    color = Neutral100,
                     fontWeight = FontWeight.Bold,
                     fontFamily = manropeFontFamily
                 )
@@ -129,13 +131,12 @@ fun RegisterScreen() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 32.dp),
+                    .padding(vertical = 48.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text(
                     text = stringResource(id = R.string.text_have_account),
                     fontSize = 12.sp,
-                    color = Neutral100,
                     fontFamily = manropeFontFamily
                 )
                 Spacer(modifier = Modifier.size(4.dp))

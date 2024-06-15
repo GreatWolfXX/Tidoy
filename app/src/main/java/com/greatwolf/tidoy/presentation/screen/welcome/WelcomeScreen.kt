@@ -1,6 +1,5 @@
 package com.greatwolf.tidoy.presentation.screen.welcome
 
-import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.animateDpAsState
@@ -17,6 +16,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -46,7 +46,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.greatwolf.tidoy.R
+import com.greatwolf.tidoy.navigation.Screen
 import com.greatwolf.tidoy.presentation.component.CustomButton
 import com.greatwolf.tidoy.presentation.component.CustomButtonStyle
 import com.greatwolf.tidoy.ui.theme.BackgroundMain
@@ -60,7 +63,11 @@ import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    paddingValues: PaddingValues,
+    navController: NavController,
+    viewModel: WelcomeViewModel = hiltViewModel()
+) {
     val pages = listOf(
         OnBoardingPage.First,
         OnBoardingPage.Second,
@@ -71,7 +78,9 @@ fun WelcomeScreen() {
     )
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .padding(paddingValues)
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         val visibility = pagerState.currentPage != pages.size.dec()
@@ -107,7 +116,12 @@ fun WelcomeScreen() {
                 CustomButton(
                     text = R.string.btn_skip,
                     style = CustomButtonStyle.SECONDARY
-                ) { }
+                ) {
+                    navigateToHome(
+                        viewModel = viewModel,
+                        navController = navController
+                    )
+                }
             }
 
             val coroutineScope = rememberCoroutineScope()
@@ -126,10 +140,24 @@ fun WelcomeScreen() {
                     coroutineScope.launch {
                         pagerState.animateScrollToPage(pagerState.currentPage.inc())
                     }
+                } else {
+                    navigateToHome(
+                        viewModel = viewModel,
+                        navController = navController
+                    )
                 }
             }
         }
     }
+}
+
+fun navigateToHome(
+    viewModel: WelcomeViewModel,
+    navController: NavController
+) {
+    viewModel.saveOnBoarding(completed = true)
+    navController.popBackStack()
+    navController.navigate(Screen.Home)
 }
 
 @Composable
@@ -205,15 +233,6 @@ fun LineIndicator(
             )
         }
     }
-}
-
-@Preview(
-    showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Composable
-fun WelcomePreview() {
-    WelcomeScreen()
 }
 
 @Preview(showBackground = true)
