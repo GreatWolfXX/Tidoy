@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Tidoy</string>
+
     <string name="title_first_onboarding">Gateway to Your Adventure</string>
     <string name="description_first_onboarding">Enjoy various housing options, from budget to luxury, in Tidoy.</string>
     <string name="title_second_onboarding">Discover the Wonders of the World: Let\'s Explore!</string>
@@ -9,7 +10,22 @@
     <string name="btn_next">Next</string>
     <string name="btn_get_started">Get Started</string>
     <string name="btn_skip">Skip</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_login_here">Login here</string>
+
+
+    <string name="title_welcome">Welcome to Tidoy  👋</string>
     <string name="title_username">Username</string>
     <string name="placeholder_example_username">ex : Johndoe123</string>
+    <string name="title_email">Email</string>
+    <string name="placeholder_example_email">ex : username@gmail.com</string>
+    <string name="title_phone">Phone Number</string>
+    <string name="placeholder_example_phone">ex : 81234567890</string>
+    <string name="title_password">Password</string>
+    <string name="title_confirm_password">Confirm Password</string>
+    <string name="placeholder_example_password">••••••••</string>
+
+    <string name="text_have_account">have a account ?</string>
+
     <string name="err_username_already_used">Username already in used</string>
 </resources>

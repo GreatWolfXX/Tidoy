@@ -75,4 +75,5 @@ dependencies {
     implementation(libs.datastore)
 
     implementation(libs.google.fonts)
+    implementation(libs.material.icons)
 }
