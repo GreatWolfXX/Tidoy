@@ -11,4 +11,12 @@ sealed class Screen {
     data object Welcome: Screen()
     @Serializable
     data object Home: Screen()
+    @Serializable
+    data object Discovery: Screen()
+    @Serializable
+    data object Wishlist: Screen()
+    @Serializable
+    data object Stay: Screen()
+    @Serializable
+    data object Profile: Screen()
 }

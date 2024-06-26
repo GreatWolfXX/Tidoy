@@ -46,6 +46,7 @@ fun CustomButton(
     iconStart: Int = -1,
     @DrawableRes
     iconEnd: Int = -1,
+    customBackgroundColor: Color = Color.Black,
     style: CustomButtonStyle = CustomButtonStyle.PRIMARY,
     onClick: () -> Unit
 ) {
@@ -54,9 +55,12 @@ fun CustomButton(
         CustomButtonStyle.SECONDARY -> if(isSystemInDarkTheme()) Color.White else Neutral100
     }
 
-    val backgroundColor = when(style) {
+    var backgroundColor = when(style) {
         CustomButtonStyle.PRIMARY -> PrimaryMain
         CustomButtonStyle.SECONDARY -> Color.Transparent
+    }
+    if(customBackgroundColor != Color.Black) {
+        backgroundColor = customBackgroundColor
     }
 
     val borderColor = when(style) {

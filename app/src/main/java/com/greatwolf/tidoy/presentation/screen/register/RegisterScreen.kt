@@ -58,7 +58,6 @@ fun RegisterScreen() {
         Column(
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
-            Spacer(modifier = Modifier.size(24.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween

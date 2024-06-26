@@ -28,4 +28,18 @@
     <string name="text_have_account">have a account ?</string>
 
     <string name="err_username_already_used">Username already in used</string>
+    
+    <string name="bottom_navigation_discovery">Discovery</string>
+    <string name="bottom_navigation_wishlist">Wishlist</string>
+    <string name="bottom_navigation_stay">Stay</string>
+    <string name="bottom_navigation_profile">Profile</string>
+    <string name="title_general">General</string>
+    <string name="title_edit_profile">Edit Profile</string>
+    <string name="title_language">Language</string>
+    <string name="title_dark_mode">Dark Mode</string>
+    <string name="title_preferences">Preferences</string>
+    <string name="title_legal">Legal &#x26; Policies</string>
+    <string name="title_help">Help &#x26; Support</string>
+    <string name="title_logout">Logout</string>
+    <string name="desc_logout">Your profile information will be saved to make things easier when you return. See you again!</string>
 </resources>
