@@ -77,4 +77,5 @@ dependencies {
 
     implementation(libs.google.fonts)
     implementation(libs.material.icons)
+    implementation(libs.coil)
 }

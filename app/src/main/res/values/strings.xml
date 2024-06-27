@@ -60,6 +60,7 @@
     <string name="title_save">Save</string>
     <string name="title_need_help">Need a help?</string>
     <string name="title_login_register">Login / Register</string>
+    <string name="title_user_promo">Use promo code for %d user</string>
 
     <string name="title_eng_language">🇬🇧 English</string>
 </resources>
