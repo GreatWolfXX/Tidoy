@@ -1,4 +1,4 @@
-package com.greatwolf.tidoy.presentation.screen.profile.language
+package com.greatwolf.tidoy.presentation.screen.editprofile.changegender
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -16,6 +16,10 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -26,6 +30,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.greatwolf.tidoy.R
+import com.greatwolf.tidoy.presentation.component.CustomButton
+import com.greatwolf.tidoy.presentation.component.CustomTextInput
+import com.greatwolf.tidoy.presentation.component.CustomTextInputStyle
 import com.greatwolf.tidoy.presentation.component.OptionComponent
 import com.greatwolf.tidoy.presentation.component.OptionComponentStyle
 import com.greatwolf.tidoy.ui.theme.Neutral100
@@ -34,7 +41,7 @@ import com.greatwolf.tidoy.ui.theme.manropeFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LanguageScreen() {
+fun ChangeGenderScreen() {
     val sheetState = rememberModalBottomSheetState()
     val containerColor = if(isSystemInDarkTheme()) Neutral100 else Color.White
     ModalBottomSheet(
@@ -54,7 +61,7 @@ fun LanguageScreen() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = stringResource(id = R.string.title_change_language),
+                    text = stringResource(id = R.string.title_change_gender),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     fontFamily = manropeFontFamily
@@ -66,7 +73,8 @@ fun LanguageScreen() {
             }
             Spacer(modifier = Modifier.size(40.dp))
             OptionComponent(
-                text = R.string.title_eng_language,
+                icon = R.drawable.male_icon,
+                text = R.string.title_male,
                 style = OptionComponentStyle.RADIOBUTTON
             )
             Spacer(modifier = Modifier
@@ -75,6 +83,23 @@ fun LanguageScreen() {
                 .height(1.dp)
                 .background(Neutral40)
             )
+            OptionComponent(
+                icon = R.drawable.female_icon,
+                text = R.string.title_female,
+                style = OptionComponentStyle.RADIOBUTTON
+            )
+            Spacer(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 12.dp)
+                .height(1.dp)
+                .background(Neutral40)
+            )
+            Spacer(modifier = Modifier.size(24.dp))
+            CustomButton(
+                text = R.string.title_save
+            ) {
+
+            }
             Spacer(modifier = Modifier.size(96.dp))
         }
     }
@@ -82,6 +107,6 @@ fun LanguageScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun LanguageScreenPreview() {
-    LanguageScreen()
+fun ChangeGenderScreenPreview() {
+    ChangeGenderScreen()
 }

@@ -48,6 +48,18 @@
     <string name="title_gender">Gender</string>
     <string name="title_number">Number</string>
     <string name="title_forgot_password">Forgot Password</string>
+    <string name="title_change_name">Change Name</string>
+    <string name="title_change_email">Change Email</string>
+    <string name="title_change_password">Change Password</string>
+    <string name="title_change_phone">Change Phone Number</string>
+    <string name="title_change_gender">Change Gender</string>
+    <string name="title_new_password">New Password</string>
+    <string name="title_confirm_new_password">Confirm New Password</string>
+    <string name="title_male">Male</string>
+    <string name="title_female">Female</string>
+    <string name="title_save">Save</string>
+    <string name="title_need_help">Need a help?</string>
+    <string name="title_login_register">Login / Register</string>
 
     <string name="title_eng_language">🇬🇧 English</string>
 </resources>
