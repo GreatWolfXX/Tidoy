@@ -23,6 +23,8 @@ val PrimaryHover = Color(0xFFD48001)
 val PrimaryPressed = Color(0xFF804D01)
 val PrimaryFocus = Color(0xFFFFEBCC)
 
+val InfoMain = Color(0xFF0167FF)
+
 val Neutral100 = Color(0xFF2D2E2E)
 val Neutral90 = Color(0xFF595A5B)
 val Neutral80 = Color(0xFF747677)

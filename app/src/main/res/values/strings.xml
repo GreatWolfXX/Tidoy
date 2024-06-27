@@ -42,4 +42,7 @@
     <string name="title_help">Help &#x26; Support</string>
     <string name="title_logout">Logout</string>
     <string name="desc_logout">Your profile information will be saved to make things easier when you return. See you again!</string>
+    <string name="title_change_language">Change Language</string>
+
+    <string name="title_eng_language">🇬🇧 English</string>
 </resources>
