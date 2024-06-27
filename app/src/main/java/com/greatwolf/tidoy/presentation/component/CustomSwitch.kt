@@ -1,10 +1,12 @@
 package com.greatwolf.tidoy.presentation.component
 
+import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector2D
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.VectorConverter
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Indication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,6 +24,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -48,12 +51,16 @@ fun CustomSwitch(
     onCheckedChange: ((Boolean) -> Unit)?
 ) {
     val interactionSource = remember { MutableInteractionSource() }
+    val currentColor = if (checked) SwitchBackgroundOn else SwitchBackgroundOff
+    val nextColor = if (!checked) SwitchBackgroundOn else SwitchBackgroundOff
+    val color = remember { Animatable(currentColor) }
+    val coroutineScope = rememberCoroutineScope()
     Row(
         modifier = Modifier
             .width(51.dp)
             .height(31.dp)
             .background(
-                color = if (checked) SwitchBackgroundOn else SwitchBackgroundOff,
+                color = color.value,
                 shape = RoundedCornerShape(16.dp)
             )
             .clickable(
@@ -61,6 +68,9 @@ fun CustomSwitch(
                 indication = null,
                 onClick = {
                     onCheckedChange?.invoke(checked)
+                    coroutineScope.launch {
+                        color.animateTo(nextColor, animationSpec = tween(500))
+                    }
                 }
             ),
         verticalAlignment = Alignment.CenterVertically,
