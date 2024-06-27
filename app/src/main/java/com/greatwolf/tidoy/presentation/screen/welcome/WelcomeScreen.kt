@@ -127,6 +127,7 @@ fun WelcomeScreen(
             val coroutineScope = rememberCoroutineScope()
             CustomButton(
                 modifier = Modifier
+                    .fillMaxWidth()
                     .padding(start = if (visibility) 12.dp else 0.dp)
                     .weight(4f, false)
                     .animateContentSize(

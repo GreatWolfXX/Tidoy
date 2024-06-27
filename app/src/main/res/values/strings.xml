@@ -43,6 +43,11 @@
     <string name="title_logout">Logout</string>
     <string name="desc_logout">Your profile information will be saved to make things easier when you return. See you again!</string>
     <string name="title_change_language">Change Language</string>
+    <string name="title_edit_photo">Edit Photo</string>
+    <string name="title_name">Name</string>
+    <string name="title_gender">Gender</string>
+    <string name="title_number">Number</string>
+    <string name="title_forgot_password">Forgot Password</string>
 
     <string name="title_eng_language">🇬🇧 English</string>
 </resources>

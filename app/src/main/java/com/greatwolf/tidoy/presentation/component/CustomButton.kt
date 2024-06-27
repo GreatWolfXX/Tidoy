@@ -22,6 +22,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.greatwolf.tidoy.R
@@ -39,13 +41,16 @@ enum class CustomButtonStyle {
 
 @Composable
 fun CustomButton(
-    modifier: Modifier = Modifier,
+    modifier: Modifier = Modifier.fillMaxWidth(),
     @StringRes
     text: Int,
     @DrawableRes
     iconStart: Int = -1,
     @DrawableRes
     iconEnd: Int = -1,
+    textPaddingValues: PaddingValues = PaddingValues(vertical = 18.dp),
+    textFontSize: TextUnit = 14.sp,
+    cornerRadius: Dp = 16.dp,
     customBackgroundColor: Color = Color.Black,
     style: CustomButtonStyle = CustomButtonStyle.PRIMARY,
     onClick: () -> Unit
@@ -69,8 +74,8 @@ fun CustomButton(
     }
 
     Button(
-        modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(16.dp),
+        modifier = modifier,
+        shape = RoundedCornerShape(cornerRadius),
         colors = ButtonColors(
             containerColor = backgroundColor,
             contentColor = contentColor,
@@ -89,9 +94,9 @@ fun CustomButton(
         }
         Spacer(modifier = Modifier.size(8.dp))
         Text(
-            modifier = Modifier.padding(vertical = 18.dp),
+            modifier = Modifier.padding(textPaddingValues),
             text = stringResource(id = text),
-            fontSize = 14.sp,
+            fontSize = textFontSize,
             fontWeight = FontWeight.Bold,
             fontFamily = manropeFontFamily
         )
