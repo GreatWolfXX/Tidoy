@@ -84,7 +84,7 @@ fun NotificationPromoComponent(
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(8.dp))
                 .padding(vertical = 8.dp),
-            model = R.drawable.test_promo_image,
+            model = R.drawable.test_promo_image, //Test image
             contentDescription = null
         )
         Text(

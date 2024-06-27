@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.greatwolf.tidoy.R
+import com.greatwolf.tidoy.presentation.component.CustomSwitch
 import com.greatwolf.tidoy.ui.theme.Neutral100
 import com.greatwolf.tidoy.ui.theme.SwitchBackgroundOff
 import com.greatwolf.tidoy.ui.theme.SwitchBackgroundOn
@@ -182,20 +183,11 @@ fun ProfileMenuItem(
             }
             ProfileMenuItemStyle.SWITCH -> {
                 var checked by remember { mutableStateOf(false) }
-                // Need create custom switch
-                Switch(
+                CustomSwitch(
                     checked = checked,
                     onCheckedChange = {
-                        checked = it
-                    },
-                    colors = SwitchDefaults.colors(
-                        checkedBorderColor = Color.Transparent,
-                        uncheckedBorderColor = Color.Transparent,
-                        checkedTrackColor = SwitchBackgroundOn,
-                        uncheckedTrackColor = SwitchBackgroundOff,
-                        checkedThumbColor = Color.White,
-                        uncheckedThumbColor = Color.White
-                    )
+                        checked = !checked
+                    }
                 )
             }
         }
